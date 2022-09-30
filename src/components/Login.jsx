@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 
 const Login = () => {
+    const [user, setUser] = useState({});
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false)
@@ -11,11 +12,10 @@ const Login = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const { data } = await axios.get(
-                "https://jsonplaceholder.typicode.com/users/1"
-            );
+            const { data } = await axios.get("https://jsonplaceholder.typicode.com/users/1");
             setUser(data);
-        } catch {
+        } catch (e) {
+            console.log(e)
             setError(true);
         }
         setLoading(false)
@@ -24,6 +24,7 @@ const Login = () => {
 
     return (
         <div className='container mx-auto'>
+            <span className="user">{user.name}</span>
             <form>
                 <input type="text" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
