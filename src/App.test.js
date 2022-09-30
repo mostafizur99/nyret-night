@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders list items', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const listItems = screen.getAllByRole('listitem');
+  // expect(listItems).toHaveLength(3);
+  // expect(listItems.length).toBe(3);
+  expect(listItems.length).toEqual(3);
 });
