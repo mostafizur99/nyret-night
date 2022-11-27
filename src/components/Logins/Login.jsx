@@ -13,6 +13,7 @@ const Login = () => {
         setLoading(true);
         try {
             const { data } = await axios.get("https://jsonplaceholder.typicode.com/users/1");
+            console.log('user data', data)
             setUser(data);
         } catch (e) {
             console.log(e)
