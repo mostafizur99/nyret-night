@@ -3,13 +3,13 @@ import Posts from "./Posts";
 
 describe('Posts component', () => {
     test('renders posts if request succeeds', async () => {
-        //Arrange
+        window.fetch = jest.fn();
+        window.fetch.mockResolvedValueOnce({
+            json: async () => [{ id: 'p1', title: 'Post one' }]
+        });
         render(<Posts />);
 
-        //Act
-        // ...nothing
 
-        // Assert
         const listElements = await screen.findAllByRole('listitem');
         expect(listElements).not.toHaveLength(0);
     });
