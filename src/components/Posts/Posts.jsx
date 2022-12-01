@@ -13,10 +13,10 @@ const Posts = () => {
 
     return (
         <div className='container mx-auto py-10'>
-            <h2 className='text-center text-lg font-bold'>Posts</h2>
-            <ul>
+            <h2 className='text-center text-lg font-bold mb-5'>Posts</h2>
+            <ul className='flex gap-3'>
                 {postData.slice(0, 10).map((postItem, index) => (
-                    <li key={index}>{postItem?.title}</li>
+                    <li key={index} className="border p-2">{postItem?.title}</li>
                 ))}
             </ul>
         </div>
