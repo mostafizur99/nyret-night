@@ -1,6 +1,7 @@
 import Greeting from "./components/Greetings/Greeting";
 import Login from "./components/Logins/Login";
 import Posts from "./components/Posts/Posts";
+import SubBanner from "./components/SubBanners/SubBanner";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <Login />
 
       <Posts />
+
+      <SubBanner />
 
       {/* <ul>
         <li>Dark UI</li>
