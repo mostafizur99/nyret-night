@@ -1,3 +1,4 @@
+import Counter from "./components/Counters/Counter";
 import Greeting from "./components/Greetings/Greeting";
 import Login from "./components/Logins/Login";
 import Posts from "./components/Posts/Posts";
@@ -16,6 +17,8 @@ function App() {
       <SubBanner />
 
       <Registration />
+
+      <Counter />
 
       {/* <ul>
         <li>Dark UI</li>
